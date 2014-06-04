@@ -1,0 +1,16 @@
+cflags = -Wall
+ldflags =
+
+rule cc
+  command = gcc $cflags -c $in -o $out
+
+rule ld
+  command = gcc $ldflags $in -o $out
+
+build hello.o: cc hello.c
+build hello.exe: ld hello.o
+
+build hello_lf.o: cc hello_lf.c
+build hello_lf.exe: ld hello_lf.o
+
+default hello.exe hello_lf.exe

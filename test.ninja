@@ -1,0 +1,10 @@
+rule hello1
+  command = hello $in $out
+
+rule hello2
+  command = hello_lf $in $out
+
+build hello1: hello1
+build hello2: hello2
+
+default hello1 hello2
